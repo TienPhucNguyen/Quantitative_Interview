@@ -44,13 +44,11 @@ def count_lines(dir):
                     n_codes += count_code
                     n_comments += count_comment
                     n_functions += count_function
-                    print("total: {}\tcodes: {}\t comments: {}\t functions:{}".format(n_total, n_codes, n_comments,
-                                                                                      n_functions))
     return n_total, n_codes, n_comments, n_functions
 
 
-
-
-
 if __name__ == '__main__':
-    print(get_size('/home/dungdv/source/Quantitative_Interview'))
+    total_lines, code_lines, comment_lines, functions = count_lines('D:\quant_interview')
+    print(f'The forder quant_interview has totally {code_lines} code lines.')
+    print(f'The forder quant_interview has totally {comment_lines} comment lines.')
+    print(f'The forder quant_interview has totally {functions} functions defined.')
