@@ -1,0 +1,3 @@
+a) There are 8 python files.
+b) There are totally 94 code lines and 5 comment lines which don't count empty lines.
+c) There are currently 4 functions defined.

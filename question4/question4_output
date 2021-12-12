@@ -1,0 +1,30 @@
+a) I used daily historical data of 5 preceding years of 01/01/2016 from Yahoo finance source (I think we need to choose a time period not too
+short and not too long). I firstly computed daily VaR and CVaR by using the historical daily returns of the portfolio but now with
+significance of 0.95^252 (as one year has approximately 252 trading-days), then calculate VaR95 and CVaR95 of the portfolio as of
+31/12/2016 by formulas VaR = 1 - (1-daily_VaR)^252 and CVaR = 1 - (1-daily_CVaR)^252. I obtained the following output:
+    - VaR of the portfolio in 31/12/2016 at 95% is: 0.9999999188235451
+    - CVaR of the portfolio in 31/12/2016 at 95% is:  0.9999999511137176
+Remarks. We can directly compute VaR95 and CVaR95 through the historical annually returns of the portfolio in 30 preceding years.
+
+b) As the question does not consider the horizon time so I chose to calculate one-day VaR and CVaR. The expected mean and covariance matrix
+of daily loss were computed by using daily historical data of 5 preceding years. Then, Central Limit Theorem says that
+              (loss - mean)/ (the deviation of the portfolio) ~ N(0, 1)
+In conclusion, using parametric method we have:
+   - Daily VaR at 95% of the portfolio is:  0.01597225158640061
+
+c) I applied the formula of optimal portfolio given by Merton in Black-Scholes model. For this purpose, I assumed the interest rate
+of the bank is 3%, the covariance matrix as in part b and consider the previous month's returns as the expected mean of returns for
+next month. Finally, we got the optimal portfolio for each month of 2016 (elements are respectively the fraction of AAPL, IBM, GOOG,
+BP, XOM, COST, GS):
+The optimal portfolio of January is [ 0.05862302  0.47474308 -0.29895912  2.06703091 -1.63712542  1.32539772  -0.98971018]
+The optimal portfolio of February is [ 0.17908012  0.66646354  0.42664029 -0.20542405  0.85571862 -0.34492762  -0.57755091]
+The optimal portfolio of March is [-0.14870382  1.59779623  0.166579   -2.32172051  3.99045807 -1.06605787  -1.21835109]
+The optimal portfolio of April is [ 0.30015934 -1.06157661  0.13182176 -1.86215921  4.10744051  0.43562978  -1.05131557]
+The optimal portfolio of May is [ 0.55934117  0.44101118 -0.32800449  0.28489574 -0.65235074  1.29459241  -0.59948527]
+The optimal portfolio of June is [-0.13683119 -0.86170728  0.01865973  1.03819163 -0.0387001   1.98492111  -1.0045339 ]
+The optimal portfolio of July is [-0.0467316   0.97912737 -0.49752649  0.18411717  0.08745978  0.74132552  -0.44777175]
+The optimal portfolio of August is [ 0.1469468  -0.26162312 -0.16875008 -1.20393328  2.03007197  0.95290697  -0.49561927]
+The optimal portfolio of September is [-0.19682912 -0.21921577 -0.08865126  2.30632137 -2.38339976  2.11797226  -0.53619772]
+The optimal portfolio of October is [-0.85941835  0.03988174  1.03648421 -2.20379369  4.35661054 -0.28437508  -1.08538938]
+The optimal portfolio of November is [-0.36654764  6.48270926 -0.42594617 -1.52454829  1.21159923 -2.09475549  -2.2825109 ]
+The optimal portfolio of December is [-0.45052021  1.01113842 -0.26497395 -0.89408776  0.23995089  1.54776614  -0.18927353]

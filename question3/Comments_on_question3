@@ -1,0 +1,2 @@
+The first way is more simple than the second one, its complexity is only O(n) while the 2nd's complexity is O(n^2).
+However, the first one has a problem when n big i.e., (n-1)! > 2^64 but 2nd one can work well for any n less then 2^64. 
